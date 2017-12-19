@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //Route::get('name/{name}/{age}',function($name,$age){
 //    return 'Im '.$name.'Im'.$age.'years old';
@@ -29,6 +29,6 @@ Route::get('error',function (){
 });
 
 //home page
-Route::get('/','StaticPagesController@home')->name("home");
+//Route::get('/','StaticPagesController@home')->name("home");
 Route::get('/about','StaticPagesController@about')->name("about");
-
+route::resource('articles','ArticlesController');

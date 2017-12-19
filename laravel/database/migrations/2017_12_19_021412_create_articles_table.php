@@ -12,7 +12,12 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('articles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->longText('content')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +27,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('articles');
     }
 }
